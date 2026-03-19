@@ -1,0 +1,12 @@
+---
+title: "Exercice2"
+format: html
+editor: visual
+---
+
+## 3. Quels fichiers sont présents à la racine du nouveau projet ? Décrivez.
+
+À la racine du projet, on trouve deux fichiers : un fichier .gitignore, qui sert à ignorer certains fichiers dans le suivi Git, et un fichier .Rproj, qui correspond au projet RStudio et contient sa configuration.
+
+## 4. Modifiez le fichier README.md en ajoutant les instructions suivantes :
+Je modifie mon fichier en local !
