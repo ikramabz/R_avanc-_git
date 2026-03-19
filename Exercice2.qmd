@@ -9,4 +9,19 @@ editor: visual
 À la racine du projet, on trouve deux fichiers : un fichier .gitignore, qui sert à ignorer certains fichiers dans le suivi Git, et un fichier .Rproj, qui correspond au projet RStudio et contient sa configuration.
 
 ## 4. Modifiez le fichier README.md en ajoutant les instructions suivantes :
-Je modifie mon fichier en local !
+
+Je modifie mon fichier en local !! 
+
+
+## 5. En utilisant l’éditeur visuel de git sous RStudio, ajoutez le fichier README.md, puis créez votre premier commit avec le message : mon premier commit. Naviguez jusqu’à votre projet sous GitHub. Voyez-vous une différence ? Est-ce normal ?
+
+**Processus** : On coche sur le fichier exercice2 qui est sur le bloc en haut a droite et on clique sur commit. on a ensuite la possibilité de laisser un message. on clique sur bouton commit.
+Apres cela, le fichier n'apparait plus dans ce bloc mais seulement dans le bloc de dessous (Files)
+
+
+**Resultat** : Après avoir effectué le commit, aucune différence n’est visible sur GitHub. Cela est normal car le commit a été réalisé en local. Il faut effectuer un push pour envoyer les modifications vers le dépôt distant afin qu’elles apparaissent sur GitHub.
+
+
+## 6. Modifiez à nouveau le fichier README.md en ajoutant une nouvelle ligne :
+
+J'écris depuis la branche main.
