@@ -25,3 +25,13 @@ Apres cela, le fichier n'apparait plus dans ce bloc mais seulement dans le bloc 
 ## 6. Modifiez à nouveau le fichier README.md en ajoutant une nouvelle ligne :
 
 J'écris depuis la branche main.
+
+
+## 7. Faites un deuxième commit en ajoutant à nouveau le fichier README.md. Ce deuxième commit aura pour message mon deuxième commit. En utilisant le client graphique de RStudio, faites un git push. Que s’est-il passé cette fois-ci sur le dépôt GitHub ?
+
+Après le deuxième commit suivi d’un git push, les modifications sont visibles sur GitHub. Le dépôt distant a été mis à jour avec le fichier README.md et le message de commit "mon deuxième commit" apparaît dans l’historique.
+
+
+## 8. Créez une nouvelle branche que vous appellerez branche-1. Modifiez le fichier README.md en modifiant la dernière ligne : J'écris depuis la branche-1. Enregistrez vos modifications en faisant un commit de ces modifications.
+
+J'ecris depuis branche-1
