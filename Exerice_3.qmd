@@ -140,4 +140,30 @@ trajets_d_0528
 ```
 
 
+# Question 5
 
+```{r}
+# fonction qui compte le nombre de boucles différentes
+compter_nombre_boucle <- function(df) {
+  
+  # on récupère les numéros de boucle uniques
+  nb_boucles <- length(unique(df$Numéro.de.boucle))
+  
+  # on retourne le résultat
+  return(nb_boucles)
+}
+```
+
+
+```{r}
+# sur les boucles
+compter_nombre_boucle(df_b_746)
+compter_nombre_boucle(df_b_787)
+
+# sur les jours
+compter_nombre_boucle(df_d_0921)
+compter_nombre_boucle(df_d_0528)
+```
+Les résultats montrent que les data.frames correspondant aux boucles 746 et 787 contiennent chacun une seule boucle, ce qui était attendu puisqu’ils ont été construits à partir d’un numéro de boucle unique.
+En revanche, les data.frames correspondant aux jours (21 septembre et 28 mai) contiennent chacun 56 boucles différentes, ce qui correspond à l’ensemble des boucles présentes dans le jeu de données pour un jour donné.
+Ces résultats étaient donc prévisibles : un filtrage par boucle donne une seule boucle, tandis qu’un filtrage par jour conserve toutes les boucles.
