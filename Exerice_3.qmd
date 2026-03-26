@@ -12,4 +12,32 @@ a)  Pour exclure le fichier csv on ouvre le fichier .gitignore et ajoute : basev
 b) envoyer dans terminal : git push -u origin main
 
 
+# Question 2
+
+
+```{r}
+df_velo <- read.csv("basevelo.csv", sep = ";")
+```
+
+```{r}
+#afficher tous les numeros de boucles pour en choisir deux
+unique(df_velo$Numéro.de.boucle)
+```
+```{r}
+#on creer les dataframes avec les deux numeros qu'on a choisis 
+df_b_746 <- df_velo[df_velo$Numéro.de.boucle == 746, ]
+df_b_787 <- df_velo[df_velo$Numéro.de.boucle == 787, ]
+```
+
+```{r}
+#on affiche les dates pour choisir les deux qu'on veut 
+unique(df_velo$Jour)
+```
+
+```{r}
+#on ajoute les dates qu'on veut dans deux dataframe, ici j'ai choisi 21 sept et 28 mai
+df_d_0921 <- df_velo[df_velo$Jour == "2025-09-21", ]
+df_d_0528 <- df_velo[df_velo$Jour == "2025-05-28", ]
+```
+
 
