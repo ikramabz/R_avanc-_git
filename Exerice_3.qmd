@@ -104,5 +104,40 @@ La fonction filtre_anomalie permet de supprimer les lignes contenant des anomali
 11 lignes ont été supprimées pour le jour 28 mai 
 
 
+# Question 4
+
+Implémentez une fonction compter_nombre_trajets(). Cette fonction prendra en entrée un 
+data.frame respectant le même schéma que notre jeu de données df_velo. Elle comptera le nombre total de trajets référencés. Appliquez cette fonction sur les data.frame définis ci dessus.
+
+```{r}
+# fonction qui calcule le nombre total de trajets
+compter_nombre_trajets <- function(df) {
+  
+  # on additionne toutes les valeurs de la colonne Total
+  total_trajets <- sum(df$Total, na.rm = TRUE)
+  
+  # on retourne le résultat
+  return(total_trajets)
+}
+```
+
+```{r}
+# calcul pour les boucles
+trajets_b_746 <- compter_nombre_trajets(df_b_746)
+trajets_b_787 <- compter_nombre_trajets(df_b_787)
+
+# calcul pour les jours
+trajets_d_0921 <- compter_nombre_trajets(df_d_0921)
+trajets_d_0528 <- compter_nombre_trajets(df_d_0528)
+```
+
+
+```{r}
+trajets_b_746
+trajets_b_787
+trajets_d_0921
+trajets_d_0528
+```
+
 
 
