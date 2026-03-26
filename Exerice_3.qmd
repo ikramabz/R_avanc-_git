@@ -217,5 +217,55 @@ Pour le 28 mai 2025, le maximum est atteint sur la boucle 785 – 50 Otages vers
 Ces résultats montrent que certaines boucles concentrent davantage de passages selon les jours, ce qui peut refléter des variations de fréquentation selon les périodes ou les localisations.
 
 
+# Question 7 
 
+Appliquer la fonction trouver_trajet_max() au jeu de donnée complet df_velo. Quelle est 
+votre analyse ? Proposez une modification de la fonction filtre_anomalie().
+
+
+```{r}
+# appliquer sur toute la base
+trouver_trajet_max(df_velo)
+```
+
+Le résultat obtenu est très élevé (345780 trajets), ce qui n’est pas réaliste. Cela s’explique par la présence d’anomalies dans les données. Il est donc nécessaire de filtrer les données avant d’appliquer la fonction.
+
+
+```{r}
+#option 1 : 
+
+filtre_anomalie <- function(df) {
+  
+  df_clean <- df[
+    is.na(df$Probabilité.de.présence.d.anomalies) |
+    df$Probabilité.de.présence.d.anomalies == "",
+  ]
+  
+  return(df_clean)
+}
+
+df_clean <- filtre_anomalie(df_velo)
+trouver_trajet_max(df_clean)
+```
+
+
+```{r}
+# option 2 remodifier toute la fonction 
+
+# version améliorée qui filtre automatiquement
+trouver_trajet_max <- function(df) {
+  
+  # on filtre les anomalies
+  df <- filtre_anomalie(df)
+  
+  # on cherche le max
+  ligne_max <- df[which.max(df$Total), ]
+  
+  return(list(
+    boucle = ligne_max$Boucle.de.comptage,
+    jour = ligne_max$Jour,
+    nb_trajets = ligne_max$Total
+  ))
+}
+```
 
