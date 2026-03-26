@@ -1,0 +1,15 @@
+---
+title: "Seance_3"
+format: pdf
+editor: visual
+---
+
+# Question 1
+
+*1. Créez un dossier data/, et copiez le jeu de données à l’intérieur du dossier.* *Initialisez un script .R ou Quarto à la racine du projet.* *Créez un premier commit comprenant l’intégralité des modifications, en excluant le fichier csv.* *Initiez un nouveau projet sur GitHub vide (sans README) que vous appellerez cours_r_partie_3. Dans un terminal, dans le projet RStudio, configurez le serveur distant en utilisant l’expression suivante : git remote add origin \<l'adresse de votre répertoire\> Faites un push. Commentez. Dans la suite, nous ferons un commit intitulé question X après larésolution de chaque question, suivi d’un push sur le serveur distant.*
+
+a)  Pour exclure le fichier csv on ouvre le fichier .gitignore et ajoute : basevelo/\*.csv (si y'a pas gitignore alors on ouvre un nouveau texte (textfil) qu'on nomme .gitignore)
+b) envoyer dans terminal : git push -u origin main
+
+
+
