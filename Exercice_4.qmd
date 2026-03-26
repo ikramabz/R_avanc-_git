@@ -1,0 +1,42 @@
+---
+title: "Exercice 4"
+format: pdf
+editor: visual
+---
+
+
+# Question 1
+
+Requêter l’ensemble du jeu de données compagnon à l’aide d’httr2 (sans télécharger le 
+csv). Ce jeu contient des informations complémentaires sur chaque boucle. Importer ce jeu 
+de données sous le nom df_velo_info. La requête renvoie par défaut le 20 premières lignes 
+uniquement, modifier la query pour obtenir l’ensemble du jeu de données (76 lignes).
+
+```{r}
+# charger les librairies
+library(httr)
+library(jsonlite)
+
+# URL de l'API (on enlève limit=20 pour tout récupérer)
+url <- "https://data.nantesmetropole.fr/api/explore/v2.1/catalog/datasets/244400404_comptages-velo-nantes-metropole-boucles-comptage/records?limit=76"
+
+# requête API
+res <- GET(url)
+
+# transformer en texte puis en dataframe
+data <- fromJSON(content(res, "text"))
+
+# récupérer les données
+df_velo_info <- data$results
+
+# voir le résultat
+head(df_velo_info)
+```
+Par défaut, la requête API renvoie uniquement 20 lignes (limit=20). Afin de récupérer l’ensemble du jeu de données (environ 76 lignes), le paramètre limit a été augmenté à 100. (on le voit sans lien)
+
+
+```{r}
+#on verifie nombre de lignes 
+nrow(df_velo_info)
+```
+
