@@ -41,3 +41,68 @@ df_d_0528 <- df_velo[df_velo$Jour == "2025-05-28", ]
 ```
 
 
+
+# Question 3
+
+Implémentez une fonction filtre_anomalie(). Cette fonction prendra en entrée un 
+data.frame respectant le même schéma que notre jeu de données df_velo. Elle retournera le 
+même data.frame sans les lignes contenant des anomalies Forte ou Faible. Appliquez cette 
+fonction sur les data.frame définis ci dessus. Combien de lignes sont filtrées ?
+
+```{r}
+# fonction qui supprime les lignes avec anomalies "Forte" ou "Faible"
+filtre_anomalie <- function(df) {
+  
+  # on garde uniquement les lignes qui NE sont PAS "Forte" ou "Faible"
+  df_clean <- df[
+    df$Probabilité.de.présence.d.anomalies != "Forte" &
+    df$Probabilité.de.présence.d.anomalies != "Faible", 
+  ]
+  
+  # on retourne le dataframe nettoyé
+  return(df_clean)
+}
+```
+
+
+```{r}
+# application sur les boucles
+df_b_746_clean <- filtre_anomalie(df_b_746)
+df_b_787_clean <- filtre_anomalie(df_b_787)
+
+# application sur les jours
+df_d_0921_clean <- filtre_anomalie(df_d_0921)
+df_d_0528_clean <- filtre_anomalie(df_d_0528)
+```
+
+```{r}
+# nombre de lignes supprimées pour chaque dataframe
+
+# boucle 746
+nb_suppr_746 <- nrow(df_b_746) - nrow(df_b_746_clean)
+
+# boucle 787
+nb_suppr_787 <- nrow(df_b_787) - nrow(df_b_787_clean)
+
+# jour 21 septembre
+nb_suppr_0921 <- nrow(df_d_0921) - nrow(df_d_0921_clean)
+
+# jour 28 mai
+nb_suppr_0528 <- nrow(df_d_0528) - nrow(df_d_0528_clean)
+
+
+# afficher les résultats dans la console
+nb_suppr_746
+nb_suppr_787
+nb_suppr_0921
+nb_suppr_0528
+```
+La fonction filtre_anomalie permet de supprimer les lignes contenant des anomalies de type "Forte" ou "Faible". Après application : 
+21 lignes ont été supprimées pour la boucle 746 
+4 lignes ont été supprimées pour la boucle 787 
+6 lignes ont été supprimées pour le jour 21 septembre 
+11 lignes ont été supprimées pour le jour 28 mai 
+
+
+
+
